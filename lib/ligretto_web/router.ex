@@ -12,6 +12,7 @@ defmodule LigrettoWeb.Router do
     get "/game/:id", GameController, :show
     post "/newgame", GameController, :new_game
     put "/joingame", GameController, :join_game
+    get "/test", GameController, :test
 
     options "/game/:id", GameController, :options
     options "/joingame", GameController, :options

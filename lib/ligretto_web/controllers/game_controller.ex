@@ -45,4 +45,9 @@ defmodule LigrettoWeb.GameController do
 
   def options do
   end
+
+  def test do
+    conn
+    |> send_resp(200, "All good")
+  end
 end
