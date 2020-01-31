@@ -33,6 +33,7 @@ config :ligretto, :redis,
   port: System.get_env("REDIS_URL")
     |> String.split(":")
     |> Enum.at(3)
+    |> String.to_integer
   
 
 # ## SSL Support
