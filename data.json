@@ -1,0 +1,17 @@
+// GAME
+{
+  "gameID": {
+    "status": "inprogress",
+    "round": 1,
+    "players": []
+  },
+
+  "piles": {
+    "pileID": {
+      "currentValue": "1",
+      "color": "blue",
+      "cards": []
+    }
+  }
+}
+
