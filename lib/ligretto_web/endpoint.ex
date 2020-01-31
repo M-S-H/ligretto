@@ -2,8 +2,10 @@ defmodule LigrettoWeb.Endpoint do
   use Phoenix.Endpoint, otp_app: :ligretto
 
   socket "/socket", LigrettoWeb.UserSocket,
-    websocket: true,
+    websocket: [timeout: 45_000],
     longpoll: false
+    # websocket: true,
+    
 
   # Serve at "/" the static files from "priv/static" directory.
   #
