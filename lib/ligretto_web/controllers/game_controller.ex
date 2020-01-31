@@ -46,8 +46,8 @@ defmodule LigrettoWeb.GameController do
   def options do
   end
 
-  def test do
+  def test(conn, _params) do
     conn
-    |> send_resp(200, "All good")
+    |> send_resp(200, Mix.env |> to_string)
   end
 end
