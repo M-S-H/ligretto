@@ -13,6 +13,20 @@ config :ligretto, LigrettoWeb.Endpoint,
   check_origin: false,
   watchers: []
 
+# config :ligretto, :redis,
+#   url: "redis://localhost:6379",
+#   host: "localhost",
+#   port: 6379,
+#   user: nil,
+#   pass: nil
+
+config :ligretto, :redis,
+  url: "redis://localhost:6379/8",
+  host: "localhost",
+  port: 6379,
+  user: nil,
+  pass: nil
+
 # ## SSL Support
 #
 # In order to use HTTPS in development, a self-signed

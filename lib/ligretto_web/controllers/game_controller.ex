@@ -50,4 +50,10 @@ defmodule LigrettoWeb.GameController do
     conn
     |> send_resp(200, Mix.env |> to_string)
   end
+
+  def clean(conn, _params) do
+    Redix.command(:redix, ["FLUSHALL"])
+    conn
+    |> send_resp(200, "clean")
+  end
 end

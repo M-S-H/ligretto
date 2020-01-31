@@ -18,7 +18,7 @@ defmodule Ligretto.Application do
     
       # you must set odd number of server
       servers: [
-        [host: "localhost", port: 6379]
+        [host: Application.get_env(:ligretto, :redis)[:host], port: Application.get_env(:ligretto, :redis)[:port], auth: Application.get_env(:ligretto, :redis)[:pass]]
       ]
     ]
 
@@ -31,7 +31,8 @@ defmodule Ligretto.Application do
       LigrettoWeb.Endpoint,
       # Starts a worker by calling: Ligretto.Worker.start_link(arg)
       # {Ligretto.Worker, arg},
-      {Redix, host: "localhost", port: 6379, database: 8, name: :redix},
+      # {Redix, host: Application.get_env(:ligretto, :redis)[:host], port: Application.get_env(:ligretto, :redis)[:port], database: 8, name: :redix},
+      {Redix, {Application.get_env(:ligretto, :redis)[:url], [name: :redix]}},
       {Redlock, readlock_opts}
     ]
 

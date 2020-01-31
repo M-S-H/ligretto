@@ -18,6 +18,23 @@ config :ligretto, LigrettoWeb.Endpoint,
 # Do not print debug messages in production
 config :logger, level: :info
 
+config :ligretto, :redis,
+  url: System.get_env("REDIS_URL"),
+  host: System.get_env("REDIS_URL")
+    |> String.split(":")
+    |> Enum.at(2)
+    |> String.split("@")
+    |> Enum.at(1),
+  pass: System.get_env("REDIS_URL")
+    |> String.split(":")
+    |> Enum.at(2)
+    |> String.split("@")
+    |> Enum.at(0),
+  port: System.get_env("REDIS_URL")
+    |> String.split(":")
+    |> Enum.at(3)
+  
+
 # ## SSL Support
 #
 # To get SSL working, you will need to add the `https` key

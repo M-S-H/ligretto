@@ -11,6 +11,8 @@ use Mix.Config
 config :ligretto, LigrettoWeb.Endpoint,
   secret_key_base: System.get_env("SECRET_KEY_BASE")
 
+# config :
+
 # Configure your database
 # config :ligretto, Ligretto.Repo,
 #   username: "postgres",
