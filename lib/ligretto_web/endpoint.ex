@@ -2,7 +2,7 @@ defmodule LigrettoWeb.Endpoint do
   use Phoenix.Endpoint, otp_app: :ligretto
 
   socket "/socket", LigrettoWeb.UserSocket,
-    websocket: [timeout: 45_000],
+    websocket: [timeout: 45_000, check_origin: false],
     longpoll: false
     # websocket: true,
     
